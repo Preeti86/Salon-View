@@ -1,0 +1,31 @@
+
+
+.title {
+  color:black;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 10px;
+} 
+
+.subtitle {
+  color: black;
+  position: absolute;
+  bottom: 3px;
+  left: 16px;
+  font-size: 10px;
+}
+
+.heart {
+  color: white;
+  float: left;
+  bottom: 2px;
+  padding-left: 32em;
+  font-size: 10px;
+}
+
+
+
+
+
+
