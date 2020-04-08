@@ -3,6 +3,7 @@
   width: 100%;
   height: auto;
   background: white;
+  list-style: none;
 
   /* add flexbox style */
   display: flex;
@@ -11,21 +12,26 @@
   flex-flow: wrap;
 }
 
-.box 
+.item 
 {
-  width: 100%;
+  width: 80%;
   height: 100px;
   margin: 10px;
   box-sizing: border-box;
   font-size: 14px;
   text-align: center;
-  border: 1px solid black;
-  line-height: 1;
-  word-spacing: 8mm;
+  line-height: 6;
+  word-spacing: 1mm;
   display: flex;  
+  color: black;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  border-bottom: 1px solid rgb(247, 243, 243);
 }
 
-.box p 
+.item span 
 {
   flex: 2;
   padding: 1mm;
@@ -36,14 +42,55 @@
 /* add responsice media quaries */
 
 @media screen and (max-width: 1200px) {
-  .box{
-    width: 90%;
+  .item{
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .box{
-    width: 90%;
+  .item{
+    width: 100%;
   }
 } 
 
+/*float layout*/
+.float {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.float:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.float-item {
+  float: left;
+}
+
+
+/*inline-block*/
+.inline-b {
+  max-width:1200px;
+  margin:0 auto;
+}
+.inline-b-item {
+  display: inline-block;
+}
+
+/*Flexbox*/
+.flex {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import StarRating from '../rating/rating';
 
 import './collection-item.style.css';
- 
+
 const CollectionItem = ({ 
       id, 
       name, 
@@ -16,31 +16,32 @@ const CollectionItem = ({
       imageUrl, 
       time, 
       address, 
+      postcode,
       open, 
       telefon, 
       description, 
       website }) => (   
-        <div
-          className={`${size} container`} 
-         >
-            <div  className="col-md-6" >
-            <img alt="salon" src={imageUrl} />
-            <p className='title'>{title} </p>
-          <h2 className='subtitle'><StarRating />(32)</h2>
-          <p className='heart'><i class="fa fa-heart-o fa-fw w3-margin-left w3-s" aria-hidden="true"></i></p>      
-            </div>     
-          <div className="contentBx">
-          <div className="content">
-            <h2>{title}</h2>
-            <p><i class="fa fa-map-marker fa-fw w3-margin-right w3-s"></i>{address}</p>
-            <p><i class="fa fa-clock-o fa-fw w3-margin-right w3-s"></i>{open}</p>
-            <p><i class="fa fa-phone fa-fw w3-margin-right w3-s"></i>{telefon}</p>
-            <p><i class="fa fa-wordpress fa-fw w3-margin-right w3-s"></i>{website}</p>
-            <p><i ></i>{description}</p>  
+      <div className="cards" >
+        <div className="card_item">
+          <div className="card">
+          <img alt="salon" clasName="card_image" src={imageUrl} /> 
+          <div className="tab">
+          <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">Info</button>
+          <button class="tablink" onclick="openCity('Paris', this, 'green')">Schema</button>
           </div>
-      </div>
-      </div>
-    
-  );
+          <div className="card_content">
+            <h2 className="card_title">{title}<i class="fa fa-heart fa-fw w3-margin-right w3-s"></i></h2>  
+            <p className="card_text"><StarRating /></p>      
+            <p className='card_text'><i class="fa fa-map-marker fa-fw w3-margin-right w3-s"></i>{address}, {postcode} </p>
+            <p className='card_text'><i class="fa fa-clock-o fa-fw w3-margin-right w3-s"></i>{open}<span className='card_text_down'><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>       
+            <p className='card_text'><i class="fa fa-phone fa-fw w3-margin-right w3-s"></i>{telefon}</p>
+            <p className='card_text'><i class="fa fa-globe fa-fw w3-margin-right w3-s"></i>{website}</p>
+            <p className='card_text'><i ></i>{description}</p>  
+          </div>
+          </div>
+          </div>
+          </div>
+    ); 
+
 
 export default withRouter(CollectionItem);

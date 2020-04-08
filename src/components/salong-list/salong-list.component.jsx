@@ -8,19 +8,19 @@ const SalongList = ({ id, title, imageUrl, rating, address, size, time, price, d
   <div 
     className={`${size} container`}  
   >
-   <div className="box" key={id}>
-      <p>{time}</p> 
-      <p>{title}</p> 
-      <p>{price}</p>
-      <p className="address">{address}</p> 
+   <div className="item">
+      <span>{time}</span> 
+      <span>{title}</span> 
+      <span>{price}</span>
+      <span className="address">{address}</span> 
       <StarRating />{rating}
-      <p>{duration}</p>
-      <p>
+      <span>{duration}</span>
+      <span>
         <i 
         class="fa fa-angle-right" 
         aria-hidden="true"  
         onClick= {() => history.push(`${match.url}${linkUrl}`)}></i>
-      </p>    
+      </span>    
     </div>
   </div>
 );
